@@ -16,36 +16,53 @@
 </head>
 
 <body>
-  <div id="game_grid" class="container">
+  <header>
+    <h1>Pokémon Matching Game</h1>
+  </header>
 
-  </div>
+  <main>
+    <div class="controls">
+      <label for="difficulty">Difficulty:</label>
+      <select class="difficulty-levels" id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
 
-  <div class="header">
-    <h1>Pokémon Card Matching Game</h1>
-    <div class="game-info">
-      <span class="clicks-info">Clicks: <span class="clicks">0</span></span>
-      <span class="pairs-info">Pairs Matched: <span class="pairs-matched">0</span>/<span class="total-pairs">0</span></span>
-      <span class="pairs-left-info">Pairs Left: <span class="pairs-left">0</span></span>
-      <span class="timer-info">Time: <span class="timer">00:00</span></span>
+      <label for="theme">Theme:</label>
+      <select class="theme-selector" id="theme">
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+      </select>
+
+      <button class="start-button">Start Game</button>
+      <button class="reset-button">Reset Game</button>
+      <button class="power-up-button">Power Up</button>
     </div>
-  </div>
 
-  <div class="controls">
-    <select class="difficulty-levels">
-      <option value="easy">Easy</option>
-      <option value="medium">Medium</option>
-      <option value="hard">Hard</option>
-    </select>
-    <button class="start-button">Start Game</button>
-    <button class="reset-button">Reset Game</button>
-    <select class="theme-selector">
-      <option value="light">Light Theme</option>
-      <option value="dark">Dark Theme</option>
-    </select>
-    <button class="power-up-button">Activate Power-Up</button>
-  </div>
+    <div id="game_grid" class="game-grid"></div>
 
-<script src="index.js"></script>
+    <div class="game-stats">
+      <div class="stats-item">
+        <span class="label">Pairs Matched:</span>
+        <span class="pairs-matched">0</span>
+      </div>
+      <div class="stats-item">
+        <span class="label">Pairs Left:</span>
+        <span class="pairs-left">0</span>
+      </div>
+      <div class="stats-item">
+        <span class="label">Clicks:</span>
+        <span class="clicks">0</span>
+      </div>
+      <div class="stats-item">
+        <span class="label">Timer:</span>
+        <span class="timer">00:00</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 
 </html>

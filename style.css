@@ -1,94 +1,117 @@
+/* styles.css */
+
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f2f2;
 }
 
 header {
-  background-color: #f1f1f1;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  margin: 2rem 0;
+  text-align: center;
 }
 
 h1 {
-  margin: 0;
+  color: #333;
 }
 
-#game_info {
+.controls {
   display: flex;
+  justify-content: center;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
-#game_info span {
-  margin-right: 10px;
+.controls label,
+.stats-item .label {
+  margin-right: 0.5rem;
 }
 
-#game_info button {
-  margin-right: 10px;
+.start-button,
+.reset-button,
+.power-up-button {
+  margin-right: 1rem;
 }
 
-#game_grid {
-  border: 2px solid tomato;
-  width: 600px;
-  height: 400px;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Updated size here */
+  gap: 1rem;
+  max-width: 800px;
+  margin-bottom: 1rem;
 }
 
 .card {
-  width: 33.3%;
   position: relative;
-  transition: transform 1s;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-}
-
-img {
-  width: 100%;
+  perspective: 800px;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  width: 100%; /* Added width property */
+  padding-bottom: 100%; /* Added padding-bottom property */
 }
 
 .front_face,
 .back_face {
-  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   backface-visibility: hidden;
-}
-
-.flip {
-  transform: rotateY(180deg);
 }
 
 .front_face {
   transform: rotateY(180deg);
+  transition: transform 0.5s;
 }
 
-/* Theme: Dark */
-
-body.theme-dark {
-  background-color: #333;
-  color: #fff;
+.back_face {
+  transform: rotateY(0);
+  transition: transform 0.5s;
 }
 
-header.theme-dark {
-  background-color: #444;
+.card.flip .front_face {
+  transform: rotateY(0);
 }
 
-#game_grid.theme-dark {
-  border-color: #777;
+.card.flip .back_face {
+  transform: rotateY(180deg);
 }
 
-/* Theme: Light */
+.card.matched {
+  cursor: default;
+}
 
-body.theme-light {
-  background-color: #f1f1f1;
+.game-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats-item {
+  margin-right: 1.5rem;
+}
+
+.stats-item .label {
+  font-weight: bold;
+  margin-right: 0.3rem;
+}
+
+.theme-default {
+  background-color: #f2f2f2;
   color: #333;
 }
 
-header.theme-light {
-  background-color: #ccc;
+.theme-dark {
+  background-color: #333;
+  color: #f2f2f2;
 }
 
-#game_grid.theme-light {
-  border-color: #999;
+.theme-light {
+  background-color: #f2f2f2;
+  color: #333;
 }
