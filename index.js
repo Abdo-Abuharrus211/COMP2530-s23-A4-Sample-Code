@@ -183,8 +183,9 @@ const setup = async () => {
   };
   
   const applyTheme = (theme) => {
-    $('body').removeClass().addClass(theme);
-  };
+    $('body').removeClass();
+    $('body').addClass('theme-' + theme);
+    };
   
   const activatePowerUp = () => {
     if (!powerUpActive) {
@@ -208,6 +209,7 @@ const setup = async () => {
 
     $('.theme-selector').on('change', () => {
       const selectedTheme = $('.theme-selector').val();
+      console.log(selectedTheme);
       applyTheme(selectedTheme);
     });
 
