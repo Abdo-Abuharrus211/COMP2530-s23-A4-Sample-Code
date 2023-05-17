@@ -5,40 +5,47 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Pokémon Card Matching Game</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- import Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- import jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="index.js"></script>
 </head>
 
-<body>
-  <div id="game_grid">
-    <div class="card">
-      <img id="img1" class="front_face" src="001.png" alt="">
-      <img class="back_face" src="back.webp" alt="">
-    </div>
-    <div class="card">
-      <img id="img2" class="front_face" src="002.png" alt="">
-      <img class="back_face" src="back.webp" alt="">
-    </div>
-    <div class="card">
-      <img id="img3" class="front_face" src="003.png" alt="">
-      <img class="back_face" src="back.webp" alt="">
-    </div>
-    <div class="card">
-      <img id="img4" class="front_face" src="001.png" alt="">
-      <img class="back_face" src="back.webp" alt="">
-    </div>
-    <div class="card">
-      <img id="img5" class="front_face" src="002.png" alt="">
-      <img class="back_face" src="back.webp" alt="">
-    </div>
-    <div class="card">
-      <img id="img6" class="front_face" src="003.png" alt="">
-      <img class="back_face" src="back.webp" alt="">
+<body class="theme-dark">
+  <div id="game_grid" class="container">
+
+  </div>
+
+  <div class="header">
+    <h1>Pokémon Card Matching Game</h1>
+    <div class="game-info">
+      <span class="clicks-info">Clicks: <span class="clicks">0</span></span>
+      <span class="pairs-info">Pairs Matched: <span class="pairs-matched">0</span>/<span class="total-pairs">0</span></span>
+      <span class="pairs-left-info">Pairs Left: <span class="pairs-left">0</span></span>
+      <span class="timer-info">Time: <span class="timer">00:00</span></span>
     </div>
   </div>
+
+  <div class="controls">
+    <select class="difficulty-levels">
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+    <button class="start-button">Start Game</button>
+    <button class="reset-button">Reset Game</button>
+    <select class="theme-selector">
+      <option value="light">Light Theme</option>
+      <option value="dark">Dark Theme</option>
+    </select>
+    <button class="power-up-button">Activate Power-Up</button>
+  </div>
+
+<script src="index.js"></script>
 </body>
 
 </html>
